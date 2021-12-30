@@ -1,0 +1,166 @@
+<%- include('../partials/flash') %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body class="pdf-body">
+        <div class="pdf-container" id="invoice">
+            <div class="row header">
+                <div class="col col-lg-12 col-sm-12">
+                    <h2 class="pdf-header"><strong>GOVERNMENT OF WEST BENGAL</strong></h2>
+                </div>
+            </div>
+            <div class="row header">
+                <div class="col col-lg-12 col-sm-12">
+                    <h3><strong class="pdf-semi-header">OFFICE OF THE DISTRICT MAGISTRATE & COLLECTOR</strong></h3>
+                </div>
+            </div>
+            <div class="row header">
+                <div class="col col-lg-12 col-sm-12">
+                    <h4><strong class="pdf-small-header">HOOGHLY TREASURY - I(PENSION)</strong></h4>
+                </div>
+            </div>
+            <div class="row appType">
+                <div class="col col-sm-12 col-lg-12">
+                    <h4><u>APPLICATION FOR RESTORATION</u></h4>
+                </div>
+            </div>
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">REFERENCE NUMBER:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.ref%></p>
+                </div>
+            </div>          
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">NAME:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.name%></p>
+                </div>
+            </div>
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">PPO NUMBER:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.PPO%></p>
+                </div>
+            </div>
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">DATE OF BIRTH:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.dateofbirth%></p>
+                </div>
+            </div>           
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">BASIC PENSION:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.basic%></p>
+                </div>
+            </div> 
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">NAME OF BANK:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.bankname%></p>
+                </div>
+            </div> 
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">BRANCH NAME:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.branchname%></p>
+                </div>
+            </div> 
+            <div class="row pdf-content" id="pageBreak1">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">ACCOUNT NUMBER:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.accountno%></p>
+                </div>
+            </div> 
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">ID NUMBER:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.idno%></p>
+                </div>
+            </div> 
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">FILE NUMBER:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.fileno%></p>
+                </div>
+            </div> 
+            <div class="row pdf-content">
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appElement">MOBILE NUMBER:</p>
+                </div>
+                <div class="col col-sm-6 col-lg-6">
+                    <p class="appVal"><%=user.restoration.mobileno%></p>
+                </div>
+            </div> 
+        </div>
+        <div class="row download mb-3 mt-5 text-center">
+            <div class="col col-sm-12 col-lg-12">
+                <button class="btn btn-primary" onclick="generatePDF()">Download</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function generatePDF() {
+           
+            const element = document.getElementById('invoice');
+            var opt = {
+                        jsPDF:        { unit: 'pt', format: 'government-letter', orientation: 'portrait'}
+                    };
+            html2pdf().set(opt).from(element).save("restorationapplication.pdf");
+        }
+    </script>
+</html>
+
+
+
+
+	

@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate')%>
+<div class="main">
+    <div class="container">
+        <% if(error && error.length){%>
+            <div class="alert alert-warning alert-dismissible fade show" id="register-alert" role="alert">
+                <%= error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <%}%>
+        <div class="form-container registerContainer">
+            <h1 class="text-center mb-5">Create an Account!</h1>
+            <form action= "/admin-register" method="POST" class= "validated-form" novalidate>
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <label for="Username" data-error= "wrong" data-success="right">Username</label>
+                        <input type="text" class="form-control" name="username" id="Username" placeholder="Username" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Username</div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" data-strength name="password" id="Password" placeholder="Password"  autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Password</div>
+                    </div>  
+                </div>
+                
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <label for="Mobile">Mobile Number</label>
+                        <input type="number" class="form-control" name="mobileno" id="Mobile" placeholder="Mobile Number" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Mobile Number</div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-sm-12 col-lg-12">
+                        <div class="mt-4 mb-4 text-center">
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

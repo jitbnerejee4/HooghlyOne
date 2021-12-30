@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="text-center mb-5">Application for 80 years benefit of <%=foundEightyApplication.name%></h1>
+        <div class="card mx-auto w-75 text-center" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item listElement"><strong>Reference Number:</strong> <%=foundEightyApplication.ref%></li>
+                <li class="list-group-item listElement"><strong>ID No:</strong> <%=foundEightyApplication.idno%></li>
+                <li class="list-group-item listElement"><strong>PPO No:</strong> <%=foundEightyApplication.PPO%></li>
+                <li class="list-group-item listElement"><strong>Pensioner Name:</strong> <%=foundEightyApplication.name%></li>
+                <li class="list-group-item listElement"><strong>Date of Birth:</strong> <%=foundEightyApplication.dateofbirth%></li>
+                <li class="list-group-item listElement"><strong>Bank Name:</strong> <%=foundEightyApplication.bankname%></li>
+                <li class="list-group-item listElement"><strong>Branch Name:</strong> <%=foundEightyApplication.branchname%></li>
+                <li class="list-group-item listElement"><strong>Account Number:</strong> <%=foundEightyApplication.accountno%></li>
+                <li class="list-group-item listElement"><strong>File No:</strong> <%=foundEightyApplication.fileno%></li>
+                <li class="list-group-item listElement"><strong>Mobile No:</strong> <%=foundEightyApplication.mobileno%></li>
+                <li class="list-group-item listElement"><strong>PPO COPY:</strong> <a href="<%=foundEightyApplication.User.ppo_copy%>" target="_blank">VIEW</a></li>
+                <li class="list-group-item listElement"><strong>AGE PROOF:</strong> <a href="<%=foundEightyApplication.ageproof%>" target="_blank">VIEW</a></li>
+                <li class="list-group-item listElement"><strong>Application Date:</strong> <%=foundEightyApplication.application_date%></li>
+                <li class="list-group-item listElement"><strong>status:</strong> <%=foundEightyApplication.status%></li>
+            </ul>
+        </div>
+        <div class="text-center mt-3 mb-5">
+            <form action="/admin-dashboard/agebenefit/eighty-applications/<%=foundEightyApplication._id%>?_method=PUT" method="POST">
+                <input type="submit" name="btn" value="Payment Made" class="btn btn-warning me-2">
+                <input type="submit" name="btn" value="Payment Rejected" class="btn btn-warning me-2">
+            </form>
+        </div>
+    </div>
+</div>

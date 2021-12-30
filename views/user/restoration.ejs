@@ -1,0 +1,92 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/sidebar') %>
+<%- include('../partials/nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="mb-5">RESTORATION APPLICATION FORM</h1>
+        <div class="form-container">
+            <div class="col-6 offset-3">
+                <form action="/dashboard/restoration" method="POST" class="validated-form" novalidate>
+                    <div class="form-group mb-3">
+                        <label for="Name">Pensioner Name</label>
+                        <input type="text" class="form-control" name="name" id="Name" placeholder="Pensioner Name" value="<%=currentUser.firstname%> <%=currentUser.lastname%>" readonly autocomplete="off" required> 
+                        <div class="invalid-feedback">Please enter your name</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="PPO No">PPO No.</label>
+                        <input type="text" class="form-control" name="ppoNo" id="PPO No" placeholder="PPO No" value="<%=currentUser.ppono%>" readonly autocomplete="off" required> 
+                        <div class="invalid-feedback">Please enter PPO No</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="date">Date of Birth</label>
+                        <%if(currentUser.dob){%>
+                            <input type="text" class="form-control" name="dateofbirth" id="date" placeholder="Select Date of Birth" required pattern="\d{4}-\d{2}-\d{2}" autocomplete="off" value="<%=currentUser.dob%>" readonly required>
+                        <%}else{%>
+                            <input type="text" class="form-control" name="dateofbirth" id="date" placeholder="Select Date of Birth" required pattern="\d{4}-\d{2}-\d{2}" autocomplete="off" required>
+                        <%}%>
+                        <div class="invalid-feedback">Please Enter Date of Birth</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="basic">Basic Pension Amount</label>
+                        <input type="number" class="form-control" name="basic" id="basic" placeholder="Your Basic Pension" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please enter Basic Pension</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="bankname">Bank Name</label>
+                        <%if(currentUser.bankname){%>
+                            <input type="text" class="form-control" name="bankname" id="bankname" value="<%=currentUser.bankname%>" autocomplete="off" readonly required>
+                        <%}else{%>
+                            <select class="form-control" name= "bankname" id="bankname" required>
+                                <option value="">Select Bank</option>
+                                <option value="STATE BANK OF INDIA">STATE BANK OF INDIA</option>
+                                <option value="UNITED BANK OF INDIA">UNITED BANK OF INDIA</option>
+                                <option value="INDIAN bank">INDIAN BANK</option>
+                            </select>
+                        <%}%>
+                        <div class="invalid-feedback">Please select Bank Name</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="branchname">Branch Name</label>
+                        <%if(currentUser.branchname){%>
+                            <input type="text" class="form-control" name="branchname" id="branchname" value="<%=currentUser.branchname%>" autocomplete="off" readonly required>
+                        <%}else{%>
+                            <select class="form-control" name="branchname" id="branchname" required>
+                                <option value="">Select Branch</option>
+                                <option value="CHINSURAH">CHINSURAH</option>
+                                <option value="PANDUA">PANDUA</option>
+                                <option value="MOGRA">MOGRA</option>
+                            </select>
+                        <%}%>
+                        <div class="invalid-feedback">Please select Branch Name</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="acno">Penison Account Number</label>
+                        <%if(currentUser.acno){%>
+                            <input type="number" class="form-control" name="acno" id="acno" placeholder="Pension Account Number" autocomplete="off" value="<%=currentUser.acno%>" readonly required>
+                        <%}else{%>
+                            <input type="number" class="form-control" name="acno" id="acno" placeholder="Pension Account Number" autocomplete="off" required>
+                        <%}%>
+                        <div class="invalid-feedback">Please Enter Pension Account Number</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id">ID No.</label>
+                        <input type="number" class="form-control" name="id" id="id" value="<%=currentUser.id%>" readonly placeholder="ID No" autocomplete="off">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="file">File No.</label>
+                        <input type="number" class="form-control" name="fileno" id="file" placeholder="File No" autocomplete="off">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="mobile">Mobile No</label>
+                        <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number" value="<%=currentUser.mobileno%>" autocomplete="off" readonly required>
+                        <div class="invalid-feedback">Please Enter your mobile number</div>
+                    </div>
+                    <div class="mt-5 mb-5 text-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

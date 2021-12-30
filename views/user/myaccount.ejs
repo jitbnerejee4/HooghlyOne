@@ -1,0 +1,193 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/sidebar') %>
+<%- include('../partials/nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <div class="card profilepic-card">
+            <form class="picForm" action="/dashboard/myaccount/changepic" method="POST" enctype="multipart/form-data">
+                <img src="<%=user.profile_pic%>" class="card-img-top" id="profilePic" alt="profile">
+                <input type="file" name="profilepic" id="FileUpload1" style="display: none">
+            </form>
+            <p class="userName"><%=user.firstname%> <%=user.lastname%></p>
+            <ul class="nav-list">
+                <li class="account">
+                    <a href="#" class="account-display">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="links-name">Account</span>
+                    </a>
+                </li>
+                <li class="pass">
+                    <a href="#" class="pass-display">
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                        <span class="links-name">Password</span>
+                    </a>
+                </li>
+                <li class="app">
+                    <a href="#" class="app-display">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <span class="links-name">Applications</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card details-card">
+            <div class="form-container">
+                <form action= "/dashboard/myaccount?_method=PUT" method="POST" class= "validated-form" novalidate>
+                    <div class="row register-row">
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="FirstName" data-error= "wrong" data-success="right">First Name</label>
+                            <input type="text" class="form-control" name="firstname" id="FirstName" value="<%=user.firstname%>" placeholder="First Name" autocomplete="off" required> 
+                            <div class="invalid-feedback">Please Enter First Name</div>
+                        </div>
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="LastName" data-error= "wrong" data-success="right">Last Name</label>
+                            <input type="text" class="form-control" name="lastname" id="LastName" value="<%=user.lastname%>" placeholder="Last Name" autocomplete="off" required> 
+                            <div class="invalid-feedback">Please Enter Last Name</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="BankName" data-error= "wrong" data-success="right">Bank Name</label>
+                            <select class="form-control" name="bankname" id="BankName">
+                                <option value="<%=user.bankname%>">
+                                    <%if(!user.bankname){%>
+                                    Select Bank
+                                    <%}else{%>
+                                        <%=user.bankname%>
+                                    <%}%>
+                                </option>
+                                <option value="STATE BANK OF INDIA">STATE BANK OF INDIA</option>
+                                <option value="UNITED BANK OF INDIA">UNITED BANK OF INDIA</option>
+                                <option value="INDIAN bank">INDIAN BANK</option>
+                            </select>
+                            <div class="invalid-feedback">Please select bank</div>
+                        </div>
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="BranchName" data-error= "wrong" data-success="right">Branch Name</label>
+                            <select class="form-control" name="branchname" id="BranchName">
+                                <option value="<%=user.branchname%>">
+                                    <%if(!user.bankname){%>
+                                        Select Branch
+                                        <%}else{%>
+                                            <%=user.branchname%>
+                                        <%}%>
+                                </option>
+                                <option value="CHINSURAH">CHINSURAH</option>
+                                <option value="PANDUA">PANDUA</option>
+                                <option value="MOGRA">MOGRA</option>
+                            </select>
+                            <div class="invalid-feedback">Please select branch</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="accountNo">Account Number</label>
+                            <input type="number" class="form-control" name="acno" id=accountNo" value="<%=user.acno%>" placeholder="Enter your pension account number"  autocomplete="off"> 
+                            <div class="invalid-feedback">Please Enter your pension account number</div>
+                        </div>  
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="accountType" data-error= "wrong" data-success="right">Account Type</label>
+                            <select class="form-control" name="actype" id="accountType">
+                                <option value="<%=user.actype%>">
+                                    <%if(!user.actype){%>
+                                        Select Account Type
+                                        <%}else{%>
+                                            <%=user.actype%>
+                                        <%}%>
+                                </option>
+                                <option value="savings">Savings</option>
+                            </select>
+                            <div class="invalid-feedback">Please select account type</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="mailingAddress">Mailing Address</label>
+                            <textarea class="form-control" name="address" rows="3" id="mailingAddress" value="<%=user.address%>" placeholder="your address" aria-label="With textarea"></textarea>
+                        </div>
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="DOB">Date of Birth</label>
+                            <input type="date" class="form-control" name="dob" id="DOB" value="<%=user.dob%>" placeholder="Select your Date of Birth" pattern="\d{4}-\d{2}-\d{2}" autocomplete="off">
+                            <div class="invalid-feedback">Please Enter Date of Birth</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" name="email" id="email" value="<%=user.email%>" placeholder="Your email address" autocomplete="off"> 
+                            <div class="invalid-feedback">Please Enter your email address</div>
+                        </div>
+                        <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                            <label for="Mobile">Mobile Number</label>
+                            <input type="number" class="form-control" name="mobileno" id="Mobile" value="<%=user.mobileno%>" placeholder="Mobile Number" readonly autocomplete="off" required> 
+                            <div class="invalid-feedback">Please Enter Mobile Number</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-sm-12 col-lg-12">
+                            <div class="mt-4 mb-4 text-center">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card password-card">
+            <div class="form-container">
+                <form action= "/dashboard/change-password" method="POST" class= "validated-form" novalidate>
+                    <div class="row register-row">
+                        <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                            <label for="oldPassword" data-error= "wrong" data-success="right">Old Password</label>
+                            <input type="password" class="form-control" name="oldpass" id="oldPassword" placeholder="Old password" autocomplete="off" required> 
+                            <div class="invalid-feedback">Please Enter your old password</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                            <label for="newPassword" data-error= "wrong" data-success="right">New Password</label>
+                            <input type="password" class="form-control" name="newpass" id="newPassword" placeholder="New password" autocomplete="off" required> 
+                            <div class="invalid-feedback">Please Enter your new password</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                            <label for="confirmPassword" data-error= "wrong" data-success="right">New Password</label>
+                            <input type="password" class="form-control" name="confirmpass" id="confirmPassword" placeholder="Confirm password" autocomplete="off" required> 
+                            <div class="invalid-feedback">Confirm password</div>
+                        </div>
+                    </div>
+                    <div class="row register-row">
+                        <div class="col col-sm-12 col-lg-12">
+                            <div class="mt-4 mb-4 text-center">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card app-card">
+            <div class="form-container">
+                <div class="row register-row">
+                    <h2>Applications</h2>
+                    <table class="table table-striped table-secondary myTable">
+                        <thead>
+                        <tr>
+                            <th>Reference Number</th>
+                            <th>Application Type</th>
+                            <th>Application Date</th>
+                            <th>Application Status</th>
+                            <th>View Application</th>
+                        </tr>
+                        </thead>
+                        <tbody id="application-table">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <div class="card bg-primary">
+                    <div class="inner">
+                        <h3> Restorations </h3>
+                        <p>View Restoration applications</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-rupee-sign" aria-hidden="true"></i>
+                    </div>
+                    <a href="/admin-dashboard/restorations" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="card bg-info">
+                    <div class="inner">
+                        <h3> Age Benefits </h3>
+                        <p> View Age Benefit Applications </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <a href="/admin-dashboard/agebenefit" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <div class="card bg-danger">
+                    <div class="inner">
+                        <h3>Death Intimations</h3>
+                        <p>View Death Intimations</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <a href="/admin-dashboard/death-intimations" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="card bg-success">
+                    <div class="inner">
+                        <h3>Search Pensioner</h3>
+                        <p>Find a particular Pensioner</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-search' ></i>
+                    </div>
+                    <a href="/admin-dashboard/search" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="card bg-warning">
+                    <div class="inner">
+                        <h3>Approval</h3>
+                        <p>Approve signup requests</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-message-dots' ></i>
+                    </div>
+                    <a href="/admin-dashboard/approval" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="card bg-light" id="news-card">
+                    <div class="inner">
+                        <marquee height= "400px" width="100%" behavior="scroll" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <%notifications.forEach((notification) =>{%>
+                                <p><a href=<%=notification.url%>><%=notification.title%> dated: <%=notification.date%></a></p>
+                            <%})%>
+                        </marquee>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-rss"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <div class="card" id="instructions">
+                    <div class="inner">
+                        <h3>Edit Notifications</h3>
+                        <p>Add or Remove Notifications</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-pencil'></i>
+                    </div>
+                    <a href="/admin-dashboard/notifications" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="card" id="aboutus">
+                    <div class="inner">
+                        <h3>About Us</h3>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-home'></i>
+                    </div>
+                    <a href="/admin-dashboard/aboutus" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/sidebar') %>
+<%- include('../partials/nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1>Notifications</h1>
+        <table class="table table-striped table-light myTable">
+            <thead>
+            <tr>
+                <th>Notifications</th>
+                <th>Date</th>
+                <th>View</th>
+            </tr>
+            </thead>
+            <tbody>
+                <%let i=1%>
+                <%notifications.forEach((notification) =>{%>
+                <tr style="height: 80px;">
+                    <td style="width: 60%;"><%=notification.title%></td>
+                    <td><%=notification.date%></td>
+                    <td class="viewNotification"><a href=<%=notification.url%>>Open</a></td>
+                </tr>
+                <%i++%>
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+</div>

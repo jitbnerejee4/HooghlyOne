@@ -1,0 +1,929 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navbar-brand{
+    padding-left: 10px;
+}
+.navbar-brand img{
+    width: 50px;
+    height: 50px;
+}
+
+  
+@media (max-width:767px) {
+    .dropdown-menu {
+      background-color: #C0E5D7;
+      border: none;
+    }
+    #nav-bar{
+        height: 500px;
+    }
+}
+
+
+/* nav bar brand slide */
+div.slide-left {
+    width:15%;
+    overflow:hidden;
+}
+div.slide-left a {
+    animation: slide-left 5s;
+}
+  
+@keyframes slide-left {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+
+
+
+/* loading icon display */
+.container{ 
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+.loader{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffff;
+    position: absolute;
+}
+
+.loading-icon{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Poppins', 'sans-serif';
+    display: flex;
+}
+
+.user-navbar .nav-item{
+    margin-left: 150px;
+}
+.sidebar{
+    height: 100%;
+    width: 78px;
+    background-color: #11101d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 240px;
+}
+
+.sidebar-logo{
+    width: 20px;
+    height: 20px;
+}
+.sidebar .logo-content .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar.active .logo-content .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+.logo-content .logo img{
+    font-size: 28px;
+    margin-right: 5px;
+}
+.logo-content .logo .logo-name{
+    font-size: 20px;
+    font-weight: 400;
+}
+.sidebar #menu-btn{
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    padding-left: 8px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+
+}
+.sidebar.active #menu-btn{
+    left: 90%;
+}
+.sidebar ul{
+    margin-top: 20px;
+    padding-left: 0;
+    left: 50%;
+}
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    
+}
+.sidebar ul li .tool-tip{
+    position: absolute;
+    left: 60px;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+.sidebar.active ul li .tool-tip{
+    display: none;
+}
+.sidebar ul li:hover .tool-tip{
+    top: 50%;
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    height: 50px;
+}
+.sidebar ul li a:hover{
+    color: #11101d;
+    background-color: #fff;
+}
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar .links-name{
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar.active .links-name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar .profile-content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar .profile-content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: #1d1b31;
+
+}
+.profile-content .profile .profile-details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile-details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile-details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.profile .profile-details .name-job{
+    margin-left: 10px;
+}
+.profile .profile-details .name{
+    font-size: 15px;
+    font-weight: 400;
+}
+.profile .profile-details .job{
+    font-size: 12px;
+}
+.profile #logout{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    padding-left: 8px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+}
+.sidebar.active .profile #logout{
+    left: 88%;
+    text-align: center;
+}
+#nav-bar{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    left: 78px;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ #nav-bar{
+    width: 100%;
+    left: 240px;
+}
+.content{
+    position: absolute;
+    height: 90%;
+    margin-bottom: 100px;
+    width: 100%;
+    left: 78px;
+    top:70px;
+    transition: all 0.5s ease;
+}
+.content:after {
+    position: absolute;
+    content: "";
+    margin-bottom: 40px;
+    height: 40px;
+    width: 1px;
+}
+.sidebar.active ~ .content{
+    width: 100%;
+    left: 240px;
+    
+    overflow-x: scroll;
+}
+ul.navbar-nav{
+    margin-left: 60%;
+}
+#nav-bar.activate{
+position: absolute;
+height: 29%;
+}
+#nav-bar.activate ~ .content{
+    position: absolute;
+    margin-top: 30%;
+    height: 50%;
+}
+
+/* dashboard cards */
+.content .container{
+    margin-top: 20px;
+    margin-left: 50px;
+  
+}
+.content .container .row{
+    margin-top: 20px;
+}
+.content .container .row #news-card{
+    height: 528px;
+    
+}
+
+.card {
+    position: relative;
+    color: #fff;
+    padding: 20px 10px 40px;
+    margin: 20px 0px;
+}
+.card:hover {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+.card:hover .icon i {
+    font-size: 100px;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+.card .inner {
+    padding: 5px 10px 0 10px;
+    height: 100px;
+}
+.card h3 {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    padding: 0;
+    text-align: left;
+}
+.card p {
+    font-size: 15px;
+}
+.card .icon {
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    right: 20px;
+    z-index: 0;
+    font-size: 72px;
+    color: rgba(0, 0, 0, 0.15);
+}
+.card .card-box-footer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    text-align: center;
+    padding: 3px 0;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-decoration: none;
+}
+.card:hover .card-box-footer {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.content .container .row #instructions{
+    background-color: #95CEA2;
+}
+.content .container .row #aboutus{
+    background-color: #2F6CAE;
+}
+
+/* table */
+.myTable{
+    margin-left: 0;
+    width: 105%;
+    margin-bottom: 50px;
+}
+
+/* admin nav and sidebar */
+#admin-nav{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    left: 78px;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ #admin-nav{
+    width: 100%;
+    left: 240px;
+}
+
+/* Flash Message */
+.afterlogin-alert{
+    position: absolute;
+    margin-top: -300px;
+    margin-bottom: 75px;
+    margin-left: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: 78px;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ .afterlogin-alert{
+    left: 240px;
+    transition: all 0.5s ease;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+}
+.afterlogin-alert ~ .content{
+    margin-top: 80px;
+    height: 80%;
+}
+
+#register-alert{
+    position: absolute;
+    margin-top: 50px;
+    left: 315px;
+    width: 50%;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+/* Registration form */
+.strength{
+    height:0px;
+    width:100%;
+    background:#ccc;
+    margin-top: -7px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+span{
+    width:0px;
+    height: 7px;
+    display: inline;
+    transition: width 0.3s;
+}
+
+.register-row{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.verify-btn{
+    margin-top: 23px;
+}
+
+.id-msg{
+    display: none;
+}
+.verify-msg{
+    display: none;
+}
+.verify-msg.dispMsg{
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: 4px;
+    color: #dc3545
+}
+
+.id-msg.disp{
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: 4px;
+    color: #dc3545
+}
+.success-msg{
+    display: none;
+}
+.success-msg.disp-success{
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: 4px;
+    color: #dc3545
+}
+.invalid-msg{
+    display: none;
+}
+.invalid-msg.disp-invalid{
+    display: block;
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: 4px;
+    color: #dc3545
+}
+
+.registerContainer{
+    display: inline-block;
+    width: 50%;
+    margin: 2% 25% 4% 32%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #fff; 
+    border-radius: 5px;
+}
+.main{
+    margin: 0% 0% 0% 0%;
+    background-image: linear-gradient(#49456E, #D1EEE9); 
+    width: 100%;
+}
+
+/* Front Page */
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(165, 133, 133, 0.75)), url('../icons/banner4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#guestNavbar{
+    background: transparent;
+    width: 95%;
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#guestNavbar img{
+    width: 200px;
+    height: 100px;
+}
+
+#guestNavbar .navbar-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    position: relative;
+}
+#guestNavbar .navbar-nav .nav-link:hover {
+    color: #000000;
+}
+#guestNavbar .navbar-nav .nav-link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+    color: transparent;
+    width: 0%;
+    content: '.';
+    height: 3px;
+}
+#guestNavbar .navbar-nav .nav-link:hover::after {
+    width: 100%;
+    transition: all 0.5s;
+}
+@media only screen and (min-width: 960px) {
+     .navbar-nav .nav-link {
+      padding: 1em 0.7em;
+    }
+    #guestNavbar {
+      padding: 0;
+    }
+    #guestNavbar .navbar-brand {
+      padding: 0 0.7em;
+    }
+}
+#guestNavbar .navbar-nav .nav-link {
+    transition: all 0.5s;
+}
+.intro{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:#fff;
+}
+.intro h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.intro p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+.intro button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.intro button span{
+    background: #49456E;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.intro button:hover span{
+    width: 100%;
+}
+.intro button:hover{
+    border: none;
+}
+
+
+/* LOG IN */
+.loginContainer{
+    display: inline-block;
+    width: 50%;
+    margin: 15% 32% 4% 35%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #fff; 
+    border-radius: 5px;
+}
+#login-alert{
+    position: absolute;
+    margin-top: 50px;
+    left: 315px;
+    width: 50%;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+/* LIFE CERTIFICATE */
+.lc-header{
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.option1{
+    text-decoration: underline;
+    color:coral;
+    font-weight: bold;
+}
+.lc-content{
+    position: relative;
+    margin-left: 50px;
+}
+.note{
+    font-weight: bolder;
+    font-size: 15px;
+    text-decoration: underline;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.lc-description{
+    
+    left: 20px;
+}
+.lc-question{
+    font-weight: bold;    
+}
+.option2{
+    text-decoration: underline;
+    color:coral;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modal-btn{
+    border: none;
+    text-decoration: underline;
+    color: blueviolet;
+    font-weight: bold;
+    background-color: #fff;
+}
+.modal-body li{
+    color: black;
+    font-weight:normal;
+}
+
+/* back button all pages */
+.backdiv{
+    text-align: center;
+    margin-top: 10px;
+}
+.backbtn i{
+    font-size: 50px;
+}
+.backbtn i:hover{
+    transform: translateX(-50%);
+}
+
+/* About us */
+.namecol{
+    border-right: 1px solid rgb(214, 224, 220);
+    box-shadow: #009688;
+}
+.namecol p{
+    text-align: center;
+}
+.namecol iframe{
+    text-align: center;
+}
+.name{
+    font-size: 18px;
+    font-weight: bold;
+}
+hr{
+    margin-top: 50px;
+}
+
+/* List Items */
+.listElement{
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* NOTIFICATION TABLE */
+.insertNotification{
+    text-align: center;
+}
+.insertNotification a{
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid;
+    padding: 14px 25px;
+    border-radius: 6px;
+    background-color: #22f70a;
+}
+.insertNotification a:hover{
+    background-color: #27c914;
+    transition: all 0.5s ease;
+}
+
+.viewNotification a{
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-radius: 6px;
+    margin-top: -1px;
+    position: absolute;
+    background-color: #12c93d;
+}
+.viewNotification a:hover{
+    background-color: #309c24;
+    transition: all 0.5s ease;
+}
+
+/* MY ACCOUNT SETTINGS */
+.profilepic-card{
+    width: 18rem;
+    height: 42rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-right: 0;
+    padding-left: 0;
+}
+.profilepic-card img{
+    border-radius: 50%;
+    margin-left: 30%;
+    height: 100px;
+    width: 100px;
+}
+.profilepic-card .userName{
+    color: black;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 25px;
+}
+.profilepic-card .userLists{
+    color: black;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+.profilepic-card .nav-list{
+    padding-left: 0px;
+}
+.profilepic-card ul li{
+    margin-top: 20px;
+    height: 60px;
+    padding-top: 15px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.profilepic-card ul li:hover{
+    background-color: #2e7ae6;
+    transition: all 0.5s ease;
+}
+.profilepic-card .account{
+    background-color: #2e7ae6;  
+}
+.profilepic-card ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.profilepic-card ul li a span{
+    width: 100px;
+    margin-left: 10px;
+    display: inline;
+}
+.details-card{
+    width: 18rem;
+    height: 42rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 300px;
+    margin-top: -691px;
+    width: 80%;
+}
+.details-card label{
+    color: #000000;
+}
+.password-card{
+    width: 18rem;
+    height: 42rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 300px;
+    margin-top: -691px;
+    width: 80%;
+    display: none;
+}
+.password-card label{
+    color: #000000;
+}
+.card-display{
+    display: block;
+}
+.card-hide{
+    display: none;
+}
+.card-background-onclick{
+    background-color: #2e7ae6;
+}
+.card-background-normal{
+    background-color: #fff;
+}
+.app-card{
+    width: 18rem;
+    height: 42rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 300px;
+    margin-top: -691px;
+    width: 80%;
+    display: none;
+}
+
+.app-card h2{
+    color: #000000;
+}
+
+/* PDF SETTING */
+.pdf-body{
+    display: block;
+    
+    
+}
+.pdf-container .header{
+    text-align: center;
+    margin-top: 10px;
+}
+.pdf-container .appType{
+    margin-top: 30px;
+}
+.pdf-container .pdf-content{
+    margin-top: 20px;
+}
+.pdf-container .appType{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pdf-container .pdf-content .appElement{
+    display: inline;
+    margin-left: 20%;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+.pdf-container .pdf-content .appVal{
+    width: 0px;
+    height: 7px;
+    display: inline;
+    margin-left: 10%;
+    font-size: 15px;
+}

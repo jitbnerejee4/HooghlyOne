@@ -1,0 +1,42 @@
+{
+  "name": "etreasury",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jit banerjee",
+  "license": "ISC",
+  "dependencies": {
+    "@vonage/server-sdk": "^2.10.10",
+    "cloudinary": "^1.27.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "crypto-random-string": "^4.0.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-recaptcha": "^5.0.2",
+    "express-session": "^1.17.2",
+    "fast-two-sms": "^3.0.0",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.5",
+    "multer": "^1.4.4",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^2.0.12",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "path": "^0.12.7",
+    "randomstring": "^1.2.1",
+    "sanitize-html": "^2.6.1",
+    "way2sms": "^1.0.2"
+  }
+}

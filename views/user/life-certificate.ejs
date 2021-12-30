@@ -1,0 +1,72 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/sidebar') %>
+<%- include('../partials/nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="text-center mb-5">LIFE CERTIFICATE</h1>
+        <p class="lc-header">There are two ways to submit Life Certificate:</p>
+        <ol>
+            <li class="option1">Submission of LC Digitally using the Aadhar based Jeevan Praman Application using a Biometric Thumb Scanning Device:</li>
+            <div class="lc-content">
+                <p class="note">NOTE:</p>
+                <p class="lc-description">In order apply using Jeevan Praman Application The Aadhar Number needs to be linked with the PPO in the respective Pension Disbursing Treasury by submitting a copy of the self attested Aadhar Card to the Treasury, mentioning the PPO No/ID, if not already linked or updated.</p>
+                <p class="lc-question">From where can you submit Life Certificate online?</p>
+                <ul>
+                    <li>Home by downloading the application and using any Biometric Thumb Scanning Device.</li>
+                    <li>Visiting the Pension Receiving Bank Branch.</li>
+                    <li>Visiting the nearest Treasury.</li>
+                    <li>Visiting any Common Service Kiosks (CSK) providing this facility.</li>
+                    <li>Visiting / Contacting the nearest India Post Payment Bank under the Department of Post.</li>
+                </ul>
+                <p class="note">REFERENCE:</p>
+                <p>Please <a href="http://www.wbfin.nic.in/writereaddata/5909_JP.pdf" target="_blank">Download</a> and refer G.O. 5909-F(Y) Dated: 25.10.2019</p>
+            </div>
+            <li class="option2">Downloading the LC Form ( <a href="http://www.wbfin.nic.in/writereaddata/LC_Form.pdf" target="_blank">Life Certificate Form.pdf</a> ) and 
+                physically submitting the same after being duly Certified by any authorized person 
+                (<button type="button" class="modal-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Refer the List of Authorized Persons 
+                </button> ).
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"> 
+                            Persons authorized to certify a Life Certificate as per WBTR 2005, Rule No. 4.171(2):</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                            <li>Gazette officers of Central / State Government.</li>
+                            <li>Officers of Reserve bank of India / Public Sector Banks.</li>
+                            <li>Registrar or Sub Registrar appointed under Indian registration Act 1908.</li>
+                            <li>Police Officer not below the rank of Sub-Inspector, in charge of a Police Station.</li>
+                            <li>Post Master / Departmental Sub Post Master / Inspector of Post Offices.</li>
+                            <li>Head of Gram Panchayat / Panchayat Samity / Zilla Parishad.</li>
+                            <li>Head of any Non Government School / College.</li>
+                            <li>Any Registered Medical Practitioner.</li>
+                            <li>M.P. / M.L.A. / Councillor / Chairman of any Municipality or Municipal Corporation.</li>
+                            <li>Managing Director / Director / Exe. Director of any State or Central PSUs.</li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </li>
+            <div class="lc-content">
+                <p class="lc-question">Where can you physically submit Life Certificate?</p>
+                <ul>
+                    <li>The Pension Disbursing Treasury in the respective Drop Box.</li>
+                    <li>The Pension Receiving Bank in their Counter / Drop Box.</li>
+                </ul>
+                <p class="note">NOTE:</p>
+                <p>The pensioner need not visit the Bank / Treasury for the submission. The physical submission may be made through any messenger/post.</p>
+                <p class="note">REFERENCE:</p>
+                <p>Please <a href="http://www.wbfin.nic.in/writereaddata/DTA_833.pdf" target="_blank">Download</a> and refer Circular No. DT/O/10/C-15/833 Dated: 04.11.2020.</p>
+            </div>
+        </ol>
+    </div>
+</div>

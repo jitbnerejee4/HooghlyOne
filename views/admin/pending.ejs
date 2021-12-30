@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="text-center">Profile of <%=foundUser.firstname + " " +  foundUser.lastname%></h1>
+        <div class="card mx-auto w-75 text-center" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item listElement"><strong>ID NO:</strong> <%=foundUser.id%></li>
+                <li class="list-group-item listElement"><strong>PPO NO:</strong> <%=foundUser.ppono%></li>
+                <li class="list-group-item listElement"><strong>FIRST NAME:</strong> <%=foundUser.firstname%></li>
+                <li class="list-group-item listElement"><strong>LAST NAME:</strong> <%=foundUser.lastname%></li>
+                <li class="list-group-item listElement"><strong>USERNAME:</strong> <%=foundUser.username%></li>
+                <li class="list-group-item listElement"><strong>MOBILE NUMBER:</strong> <%=foundUser.mobileno%></li>
+                <li class="list-group-item listElement"><strong>PPO COPY:</strong> <a href="<%=foundUser.ppo_copy%>" target="_blank">View</a></li>
+                <li class="list-group-item listElement">
+                    <strong>status:</strong>
+                     <%if(foundUser.isApproved){%>
+                        Approved
+                    <%}else{%>
+                        Pending
+                    <%}%>
+                </li>
+            </ul>
+        </div>
+        <div class="text-center mt-3 mb-5">
+            <form action="/admin-dashboard/approval/<%=foundUser._id%>" method="POST">
+                <button type="submit" name="btn" class="btn btn-success" value="approved">Approve</button>
+                <button type="submit" name="btn" class="btn btn-warning" value="rejected">Reject</button>
+            </form>
+        </div>
+    </div>
+</div>

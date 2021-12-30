@@ -1,0 +1,98 @@
+<div class="sidebar">
+    <div class="logo-content">
+        <div class="logo">
+            <img src="/icons/biswa-bangla.png" alt="logo" class="sidebar-logo">
+            <div class="logo-name">HooghlyOne</div>
+        </div>
+        <i class='bx bx-menu' id="menu-btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="/dashboard">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="links-name">DASHBOARD</span>
+            </a>
+            <span class="tool-tip">Dashboard</span>
+        </li>
+        <li>
+            <a href="/dashboard/restoration">
+                <i class='bx bx-dollar' ></i>
+                <span class="links-name">RESTORATION</span>
+            </a>
+            <span class="tool-tip">Restoration</span>
+        </li>
+        <li>
+            <a href="/dashboard/forms">
+                <i class='bx bxs-file' ></i>
+                <span class="links-name">FORMS</span>
+            </a>
+            <span class="tool-tip">Forms</span>
+        </li>
+        <li>
+            <a href="/dashboard/lifecertificate">
+                <i class='bx bxs-pencil' ></i>
+                <span class="links-name">LIFECERTIFICATE</span>
+            </a>
+            <span class="tool-tip">Life certificate</span>
+        </li>
+        <li>
+            <a href="/dashboard/death">
+                <i class='bx bx-file-blank'></i>
+                <span class="links-name">DEATHINTIMATION</span>
+            </a>
+            <span class="tool-tip">Death Intimation</span>
+        </li>
+        <li>
+            <a href="/dashboard/agebenefit/eighty">
+                <i class='bx bx-money'></i>
+                <span class="links-name">EIGHTY</span>
+            </a>
+            <span class="tool-tip">Eighty</span>
+        </li>
+        <li>
+            <a href="/dashboard/agebenefit/eightyfive">
+                <i class='bx bxs-wallet-alt'></i>
+                <span class="links-name">EIGHTYFIVE</span>
+            </a>
+            <span class="tool-tip">Eighty five</span>
+        </li>
+        <li>
+            <a href="/dashboard/agebenefit/ninety">
+                <i class='bx bxs-wallet'></i>
+                <span class="links-name">NINETY</span>
+            </a>
+            <span class="tool-tip">Ninety</span>
+        </li>
+        <li>
+            <a href="/dashboard/agebenefit/hundred">
+                <i class='bx bx-wallet' ></i>
+                <span class="links-name">HUNDRED</span>
+            </a>
+            <span class="tool-tip">Hundred</span>
+        </li>
+        <li>
+            <a href="/dashboard/notifications">
+                <i class='bx bxs-bell'></i>
+                <span class="links-name">NOTIFICATIONS</span>
+            </a>
+            <span class="tool-tip">Notifications</span>
+        </li>
+    </ul>
+    <div class="profile-content">
+        <div class="profile">
+            <div class="profile-details">
+                <img src="<%=currentUser.profile_pic%>" alt="profilepic">
+                <div class="name-job">
+                    <% if(currentUser){ %>
+                    <div class="name"><%=currentUser.username%></div>
+                    <div class="job">PENSIONER</div>
+                    <% } %>
+                </div>
+            </div>
+            <a href="/logout"><i class='bx bx-log-out' id="logout" ></i></a>
+        </div>
+    </div>
+</div>
+
+
+   

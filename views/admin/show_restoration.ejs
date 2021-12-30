@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="text-center mb-5">Application for Restoration of <%=foundRestoration.name%></h1>
+        <div class="card mx-auto w-75 text-center" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item listElement"><strong>Reference Number:</strong> <%=foundRestoration.ref%></li>
+                <li class="list-group-item listElement"><strong>ID No:</strong> <%=foundRestoration.idno%></li>
+                <li class="list-group-item listElement"><strong>PPO No:</strong> <%=foundRestoration.PPO%></li>
+                <li class="list-group-item listElement"><strong>Pensioner Name:</strong> <%=foundRestoration.name%></li>
+                <li class="list-group-item listElement"><strong>Date of Birth:</strong> <%=foundRestoration.dateofbirth%></li>
+                <li class="list-group-item listElement"><strong>Basic:</strong> <%=foundRestoration.basic%></li>
+                <li class="list-group-item listElement"><strong>Bank Name:</strong> <%=foundRestoration.bankname%></li>
+                <li class="list-group-item listElement"><strong>Branch Name:</strong> <%=foundRestoration.branchname%></li>
+                <li class="list-group-item listElement"><strong>Account Number:</strong> <%=foundRestoration.accountno%></li>
+                <li class="list-group-item listElement"><strong>File No:</strong> <%=foundRestoration.fileno%></li>
+                <li class="list-group-item listElement"><strong>Mobile No:</strong> <%=foundRestoration.mobileno%></li>
+                <li class="list-group-item listElement"><strong>PPO COPY:</strong><a href="<%=foundRestoration.User.ppo_copy%>" target="_blank">VIEW</a></li>
+                <li class="list-group-item listElement"><strong>status:</strong> <%=foundRestoration.status%></li>
+            </ul>
+        </div>
+        <div class="text-center mt-3 mb-5">
+            <form action="/admin-dashboard/restorations/<%=foundRestoration._id%>?_method=PUT" method="POST">
+                <input type="submit" name="btn" value="Payment Made" class="btn btn-warning me-2">
+                <input type="submit" name="btn" value="Payment Rejected" class="btn btn-warning me-2">
+            </form>
+        </div>
+    </div>
+</div>

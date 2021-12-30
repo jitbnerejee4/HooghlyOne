@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1>Send a Message</h1>
+            <form action="/admin-dashboard/search/sendmessage/<%=user._id%>" method="POST">
+            <div class="form-group mb-3">
+                <label for="to">To</label>
+                <input type="text" class="form-control" id="to" placeholder="To" name="username" value="<%=user.username%>" disabled>
+            </div>
+            <div class="form-group mb-3">
+                <label for="typemessage">Message</label>
+                <textarea class="form-control" name="message" rows="10" id="typemessage" placeholder="Type your message here..." aria-label="With textarea"></textarea>
+            </div>
+            <div>
+                <button class="btn btn-info" type="submit">Send</button>
+            </div>
+            <div class="backdiv">
+                <a href="/admin-dashboard/search" class="backbtn"><i class="fas fa-arrow-left"></i></a>
+            </div>
+        </form>
+    </div>
+</div>

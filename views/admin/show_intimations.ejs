@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="text-center">Death Intimation of <%=foundIntimation.name%></h1>
+        <div class="card mx-auto w-75 text-center" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item listElement"><strong>Reference Number:</strong> <%=foundIntimation.ref%></li>
+                <li class="list-group-item listElement"><strong>ID No:</strong> <%=foundIntimation.idno%></li>
+                <li class="list-group-item listElement"><strong>PPO No:</strong> <%=foundIntimation.PPO%></li>
+                <li class="list-group-item listElement"><strong>Pensioner Name:</strong> <%=foundIntimation.name%></li>
+                <li class="list-group-item listElement"><strong>Date of Death:</strong> <%=foundIntimation.dateofdeath%></li>
+                <li class="list-group-item listElement"><strong>Bank Name:</strong> <%=foundIntimation.bankname%></li>
+                <li class="list-group-item listElement"><strong>Branch Name:</strong> <%=foundIntimation.branchname%></li>
+                <li class="list-group-item listElement"><strong>Account Number:</strong> <%=foundIntimation.accountno%></li>
+                <li class="list-group-item listElement"><strong>File No:</strong> <%=foundIntimation.fileno%></li>
+                <li class="list-group-item listElement"><strong>Applicant Name:</strong> <%=foundIntimation.applicantname%></li>
+                <li class="list-group-item listElement"><strong>Mobile No:</strong> <%=foundIntimation.mobileno%></li>
+                <li class="list-group-item listElement"><strong>Email Id:</strong> <%=foundIntimation.email%></li>
+                <li class="list-group-item listElement"><strong>Application Date:</strong> <%=foundIntimation.application_date%></li>
+                <%if(foundIntimation.User){%>
+                    <li class="list-group-item listElement"><strong>PPO COPY:</strong> <a href="<%=foundIntimation.User.ppo_copy%>" target="_blank">View</a></li>
+                <%}else{%>
+                    <li class="list-group-item listElement"><strong>PPO COPY:</strong> <a href="<%=foundIntimation.ppo_copy%>" target="_blank">View</a></li>
+                <%}%>
+                <li class="list-group-item listElement"><strong>DEATH CERTIFICATE:</strong> <a href="<%=foundIntimation.deathcertificate%>" target="_blank">View</a></li>
+                <li class="list-group-item listElement"><strong>status:</strong> <%=foundIntimation.status%></li>
+            </ul>
+        </div>
+        <div class="text-center mt-3 mb-5">
+            <form action="/admin-dashboard/death-intimations/<%=foundIntimation._id%>?_method=PUT" method="POST">
+                <button type="submit" name="btn" value="Pension Stopped" class="btn btn-warning">Pension Stopped</button>
+                <button type="submit" name="btn" value="Refund Letter Issued" class="btn btn-warning">Refund Letter Issued</button>
+                <button type="submit" name="btn" value="Refund Received" class="btn btn-warning">Refund Received</button>
+                <button type="submit" name="btn" value="Challan Issued" class="btn btn-warning">Challan Issued</button>
+                <button type="submit" name="btn" value="No Refund" class="btn btn-warning">No Refund</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="text-center mb-5">Application for 100 years benefit of <%=foundApplication.name%></h1>
+        <div class="card mx-auto w-75 text-center" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item listElement"><strong>Reference Number:</strong><%=foundApplication.ref%></li>
+                <li class="list-group-item listElement"><strong>ID No:</strong> <%=foundApplication.idno%></li>
+                <li class="list-group-item listElement"><strong>PPO No:</strong> <%=foundApplication.PPO%></li>
+                <li class="list-group-item listElement"><strong>Pensioner Name:</strong> <%=foundApplication.name%></li>
+                <li class="list-group-item listElement"><strong>Date of Birth:</strong> <%=foundApplication.dateofbirth%></li>
+                <li class="list-group-item listElement"><strong>Bank Name:</strong> <%=foundApplication.bankname%></li>
+                <li class="list-group-item listElement"><strong>Branch Name:</strong> <%=foundApplication.branchname%></li>
+                <li class="list-group-item listElement"><strong>Account Number:</strong> <%=foundApplication.accountno%></li>
+                <li class="list-group-item listElement"><strong>File No:</strong> <%=foundApplication.fileno%></li>
+                <li class="list-group-item listElement"><strong>Mobile No:</strong> <%=foundApplication.mobileno%></li>
+                <li class="list-group-item listElement"><strong>Application Date:</strong> <%=foundApplication.application_date%></li>
+                <li class="list-group-item listElement"><strong>PPO COPY:</strong> <a href="<%=foundApplication.User.ppo_copy%>" target="_blank">VIEW</a></li>
+                <li class="list-group-item listElement"><strong>AGE PROOF:</strong> <a href="<%=foundApplication.ageproof%>" target="_blank">VIEW</a></li>
+                <li class="list-group-item listElement"><strong>status:</strong> <%=foundApplication.status%></li>
+            </ul>
+        </div>
+        <div class="text-center mt-3 mb-5">
+            <form action="/admin-dashboard/agebenefit/hundred-applications/<%=foundApplication._id%>?_method=PUT" method="POST">
+                <input type="submit" name="btn" value="Payment Made" class="btn btn-warning me-2">
+                <input type="submit" name="btn" value="Payment Rejected" class="btn btn-warning me-2">
+            </form>
+        </div>
+    </div>
+</div>

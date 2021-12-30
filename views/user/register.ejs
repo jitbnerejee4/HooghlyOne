@@ -1,0 +1,88 @@
+<% layout('layouts/boilerplate')%>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="main">
+    <div class="container">
+        <% if(error && error.length){%>
+            <div class="alert alert-warning alert-dismissible fade show" id="register-alert" role="alert">
+                <%= error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <%}%>
+        <div class="form-container registerContainer">
+            <h1 class="text-center mb-5">Create an Account!</h1>
+            <form action= "/register" method="POST" class= "validated-form" novalidate enctype="multipart/form-data">
+                <!-- <div class="row register-row">
+                    <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                        <label for="FirstName" data-error= "wrong" data-success="right">First Name</label>
+                        <input type="text" class="form-control" name="firstname" id="FirstName" placeholder="First Name" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter First Name</div>
+                    </div>
+                    <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                        <label for="LastName" data-error= "wrong" data-success="right">Last Name</label>
+                        <input type="text" class="form-control" name="lastname" id="LastName" placeholder="Last Name" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Last Name</div>
+                    </div>
+                </div> -->
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <label for="Username" data-error= "wrong" data-success="right">Username</label>
+                        <input type="text" class="form-control" name="username" id="Username" placeholder="Username" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Username</div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" data-strength name="password" id="Password" placeholder="Password"  autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Password</div>
+                    </div>  
+                </div>
+                <div class="row register-row">
+                    <div class="col col-lg-9 col-sm-9 form-group mb-3">
+                        <label for="IdNo">Treasury ID Number</label>
+                        <input type="number" class="form-control" name="idno" id="IdNo" placeholder="Treasury ID No" autocomplete="off" required> 
+                        <p class="id-msg">ID already exists</p>
+                        <p class="verify-msg">Please verify ID Number</p>
+                        <p class="success-msg">Looks good!</p>
+                        <p class="invalid-msg">Please enter ID Number</p>
+                        
+                    </div>
+                    <div class="col col-lg-3 col-sm-3 form-group mb-3">
+                        <button type="button" class="btn btn-primary verify-btn">Verify</button>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                        <label for="PPONO">PPO Number</label>
+                        <input type="text" class="form-control" name="ppono" id="PPONO" placeholder="PPO Number" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter PPO Number</div>
+                    </div>
+                    <div class="col col-lg-6 col-sm-6 form-group mb-3">
+                        <label for="Mobile">Mobile Number</label>
+                        <input type="number" class="form-control" name="mobileno" id="Mobile" placeholder="Mobile Number" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please Enter Mobile Number</div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <label for="PPOcopy">Upload PPO</label>
+                        <input type="file" name="ppocopy" id="PPOcopy" required>
+                        <div class="invalid-feedback">Please upload your PPO</div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-lg-12 col-sm-12 form-group mb-3">
+                        <div class="g-recaptcha" data-sitekey="6LdJfx0dAAAAANS-m5-JlP7J3N7BfDOSOM_2Qdl-"></div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col col-sm-12 col-lg-12">
+                        <div class="mt-4 mb-4 text-center">
+                            <button type="submit" class="btn btn-success register-btn">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

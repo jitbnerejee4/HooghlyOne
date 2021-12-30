@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate')%>
+<%- include('../partials/admin-sidebar') %>
+<%- include('../partials/admin-nav') %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1 class="mb-5">INSERT NOTIFICATION</h1>
+        <div class="form-container">
+            <div class="col-6 offset-3">
+                <form action="/admin-dashboard/notifications/insert" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+                    <div class="form-group mb-3">
+                        <label for="Title">Title</label>
+                        <input type="text" class="form-control" name="title" id="Title" placeholder="Notification Title" autocomplete="off" required> 
+                        <div class="invalid-feedback">Please insert title</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" name="date" id="date" placeholder="Select date" required pattern="\d{4}-\d{2}-\d{2}" autocomplete="off"  required>
+                        <div class="invalid-feedback">Please Enter Date of Notification</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Notification">Upload Notification</label>
+                        <input type="file" name="notification" id="Notification" required>
+                        <div class="invalid-feedback">Please select file</div>
+                    </div>
+                    <div class="mt-5 mb-5 text-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

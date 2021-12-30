@@ -1,0 +1,88 @@
+<% layout('layouts/boilerplate')%>
+<%if(currentUser){%>
+    <%if(currentUser.role === 2){%>
+        <%- include('../partials/admin-sidebar') %>
+        <%- include('../partials/admin-nav') %> 
+    <%}else{%>  
+        <%- include('../partials/sidebar') %>
+        <%- include('../partials/nav') %>
+    <%}%>
+<% } %>
+<%- include('../partials/flash') %>
+<div class="content">
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-6 col-sm-12 namecol">
+                <p class="name">Sri. Indrajit Biswas (WBA&AS)</p>
+                <p>Treasury Officer</p>
+                <p>Hooghly Treasury - I</p>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 namecol">
+                <p class="name">Smt. Kaberi Chakraborty (WBA&AS)</p>
+                <p>Additional Treasury Officer (Pension)</p>
+                <p>Hooghly Treasury - I</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 namecol">
+                <p class="name">Sri. Chiranjit Sarkar (WBA&AS)</p>
+                <p>Additional Treasury Officer (Cheque)</p>
+                <p>Hooghly Treasury - I</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 namecol">
+                <p class="name">DESIGNED AND DEVELOPED BY</p>
+                <p>Sri. Jit Banerjee</p>
+                <p>Hooghly Treasury - I</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 namecol">
+                <p class="name">VISITORS COUNT</p>
+                <h1 id="nbr"><%=visitors.count%></h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-6 col-sm-12 namecol">
+                <p class="name">OFFICE ADDRESS</p>
+                <p>Hooghly Treasury - I </p>
+                <p>Treasury Buildings</p>
+                <p>Court More</p>
+                <p>Chinsurah</p>
+                <p>Hooghly</p>
+                <p>712101</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 namecol">
+                <p class="name">OFFICE MAP</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.69756422917!2d88.39889651496527!3d22.8876279850215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89152c7c1f3a5%3A0x861ceb97bba4d57b!2sHooghly%20Treasury%20Building!5e0!3m2!1sen!2sin!4v1635623881378!5m2!1sen!2sin" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 namecol">
+                <p class="name">CONTACT US</p>
+                <p>atopen.hga-wb@gov.in</p>
+                <p>to.hga-wb@gov.in</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let speed = 50;
+  function incEltNbr(id) {
+    elt = document.getElementById(id);
+    endNbr = Number(document.getElementById(id).innerHTML);
+    incNbrRec(0, endNbr, elt);
+  }
+  function incNbrRec(i, endNbr, elt) {
+    if (i <= endNbr) {
+      elt.innerHTML = i;
+      setTimeout(function() {
+        incNbrRec(i + 1, endNbr, elt);
+      }, speed);
+    }
+  }
+    let tempVal= Number(document.getElementById('nbr').innerHTML);
+    if(tempVal){
+        incEltNbr('nbr');
+    }
+
+</script>

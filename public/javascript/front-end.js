@@ -197,6 +197,7 @@ $('#menu-btn').click(function(){
 })
 $('.navbar-toggler').click(function(){
     $('#nav-bar').toggleClass("activate");
+    $('#guestNavbar').toggleClass("activate");
 })
 // Password strength check 
 

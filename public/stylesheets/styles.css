@@ -92,9 +92,9 @@ body{
     display: flex;
 }
 
-.user-navbar .nav-item{
+/* .user-navbar .nav-item{
     margin-left: 150px;
-}
+} */
 .sidebar{
     height: 100%;
     width: 78px;
@@ -306,14 +306,14 @@ body{
     
     overflow-x: scroll;
 }
-ul.navbar-nav{
+#testNav{
+    margin-left: 60%;
     text-align: center;
 }
 #nav-bar.activate{
 position: absolute;
 height: 29%;
 }
-
 #nav-bar.activate ~ .content{
     position: absolute;
     margin-top: 30%;
@@ -412,6 +412,9 @@ height: 29%;
 .sidebar.active ~ #admin-nav{
     width: 100%;
     left: 240px;
+}
+#adminUL{
+    margin-left: 70%;
 }
 
 /* Flash Message */
@@ -581,29 +584,9 @@ span{
     width: 100%;
     transition: all 0.5s;
 }
-@media only screen and (min-width: 960px) {
-     .navbar-nav .nav-link {
-      padding: 1em 0.7em;
-    }
-    #guestNavbar {
-      padding: 0;
-    }
-    #guestNavbar .navbar-brand {
-      padding: 0 0.7em;
-    }
-}
+
 #guestNavbar .navbar-nav .nav-link {
     transition: all 0.5s;
-}
-#guestNavbar.activate{
-    position: absolute;
-    height: 29%;
-}
-#guestNavbar.activate ~ .intro{
-    position: absolute;
-    margin-top: 10%;
-    height: 50%;
-    transition: all 0.5s ease;
 }
 .intro{
     width: 100%;
@@ -654,7 +637,14 @@ span{
 .intro button:hover{
     border: none;
 }
-
+#guestNavbar.activate ~ .intro{
+    position: absolute;
+    margin-top: 8%;
+    height: 50%;
+    transition: all 0.5s ease;
+    font-size: 10px;
+    
+}
 
 /* LOG IN */
 .loginContainer{
@@ -938,3 +928,7 @@ hr{
     margin-left: 10%;
     font-size: 15px;
 }
+  
+
+
+

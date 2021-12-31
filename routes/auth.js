@@ -13,13 +13,15 @@ const v3SiteKey= '6Lcw2RwdAAAAAJ0nMgTiSk9Mcwql3vvzksa224pv';
 const v3SecretKey= '6Lcw2RwdAAAAAIkWn_p0j0jGL911gdM3Dj9P-tfL';
 const v2SiteKey= '6LdJfx0dAAAAANS-m5-JlP7J3N7BfDOSOM_2Qdl-';
 const v2SecretKey= '6LdJfx0dAAAAACAd5MQ81O-IlnvyQQhgA1BrDOhg';
+const newSitekey= '6LfE1tsdAAAAAE6Rc-2nQbGJyALbSYU6EzclcM7A';
+const newSecretKey= '6LfE1tsdAAAAAE6Rc-2nQbGJyALbSYU6EzclcM7A';
 const multer = require('multer');
 const {storage}= require('../cloudinary')
 const {cloudinary} = require('../cloudinary');
 const upload = multer({storage});
 let randomOtp = 0;
 let mobile = 0;
-var recaptcha = new Recaptcha('6LfE1tsdAAAAAE6Rc-2nQbGJyALbSYU6EzclcM7A', '6LfE1tsdAAAAAKcLcxSLBFKfkBX9E1LfARr9k8vu', {callback:'cb'});
+var recaptcha = new Recaptcha('6LfE1tsdAAAAAE6Rc-2nQbGJyALbSYU6EzclcM7A', '6LdJfx0dAAAAACAd5MQ81O-IlnvyQQhgA1BrDOhg', {callback:'cb'});
 
 
 router.get('/register',  recaptcha.middleware.render, CatchAsync(async(req, res) =>{

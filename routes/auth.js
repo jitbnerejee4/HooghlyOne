@@ -90,10 +90,10 @@ router.get('/login', recaptcha.middleware.render, CatchAsync(async(req, res, nex
 
 router.post('/login', recaptcha.middleware.verify, passport.authenticate('local',{failureFlash: true, failureRedirect: '/login'} ), CatchAsync(async(req, res) =>{
     if(req.recaptcha.error){
-        console.log(req.recaptcha.error)
-        req.flash('error', 'Captcha Error!')
-        req.logout();
-        return res.redirect('/login')
+        res.send(req.recaptcha.error)
+        // req.flash('error', 'Captcha Error!')
+        // req.logout();
+        // return res.redirect('/login')
     }else{
         if(!req.user.isApproved && req.user.role === 0){
             req.flash('error', 'your signup request is pending approval. Please keep patience');

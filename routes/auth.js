@@ -23,7 +23,7 @@ const {cloudinary} = require('../cloudinary');
 const upload = multer({storage});
 let randomOtp = 0;
 let mobile = 0;
-var recaptcha = new Recaptcha('6Le1oekdAAAAAJMci7ePM9BjmizzDn1-WHTrB7qj', '6Le1oekdAAAAAA5NLcY9zAijiPwV5nxZrnf5-j6F', {callback:'cb'});
+var recaptcha = new Recaptcha('6LdIfx0dAAAAAGi_AAqo3cSf36IGPhMmg7oexDsD', '6LdIfx0dAAAAAK4GRAMxiLkKPRgGXcBwhwnsJQGN', {callback:'cb'});
 
 router.get('/register',  recaptcha.middleware.render, CatchAsync(async(req, res) =>{
     if(req.isAuthenticated()){
